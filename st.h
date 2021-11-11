@@ -116,6 +116,7 @@ int subprocwd(char *);
 /* config.h globals */
 extern char *utmp;
 extern char *scroll;
+extern char *ash;
 extern char *stty_args;
 extern char *vtiden;
 extern wchar_t *worddelimiters;

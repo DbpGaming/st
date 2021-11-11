@@ -697,7 +697,9 @@ execsh(char *cmd, char **args)
 			die("who are you?\n");
 	}
 
-	if ((sh = getenv("SHELL")) == NULL)
+	if (ash)
+		sh = ash;
+	else if((sh = getenv("SHELL")) == NULL)
 		sh = (pw->pw_shell[0]) ? pw->pw_shell : cmd;
 
 	if (args) {

@@ -11,11 +11,13 @@ static int borderpx = 2;
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
  * 2: scroll and/or utmp
- * 3: SHELL environment variable
- * 4: value of shell in /etc/passwd
- * 5: value of shell in config.h
+ * 3: value of ash
+ * 4: SHELL environment variable
+ * 5: value of shell in /etc/passwd
+ * 6: value of shell in config.h
  */
 static char *shell = "/bin/sh";
+char *ash = "/bin/ash";
 char *utmp = NULL;
 char *scroll = "dvtm";
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
